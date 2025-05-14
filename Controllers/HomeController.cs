@@ -17,4 +17,10 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Juego()
+    {
+        Respuesta.InicializarRespuesta();
+        ViewBag.Respuesta = respuesta;
+        return View();
+    }
 }
