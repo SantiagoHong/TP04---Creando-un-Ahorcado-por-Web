@@ -15,12 +15,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        Juego.InicializarJuego();
+        ViewBag.Palabra = Juego.palabra;
         return View();
     }
-    public IActionResult Juego()
-    {
-        Respuesta.InicializarRespuesta();
-        ViewBag.Respuesta = respuesta;
-        return View();
-    }
+    
+    
 }
