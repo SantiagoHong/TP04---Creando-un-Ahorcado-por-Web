@@ -1,3 +1,24 @@
 @{
     ViewData["Title"] = "Juego";
 }
+<p>@ViewBag.Palabra</p>
+<p>Letras utilizadas: @for(int i = 0; i < ViewBag.letrasUsadas.Count; i++)
+{
+    @ViewBag.letrasUsadas[i];
+
+} </p>
+<p>intentos: @ViewBag.Intentos</p>
+
+<p>Adivine la letra: <form action='@Url.Action("JugarLetra", "Home")' method="get">
+    <input type="text" maxlength="1" style="text-transform: lowercase;" name="letra">
+    <input type="submit" value = "Arriesgar Letra">
+
+
+</form> </p>
+
+<p>Adivine la palabra: <form action='@Url.Action("JugarPalabra", "Home")' method="get">
+    <input type="text" style="text-transform: lowercase;" name="palabra">
+    <input type="submit" value = "Arriesgar Palabra">
+
+
+</form> </p>
