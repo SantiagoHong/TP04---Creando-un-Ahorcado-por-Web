@@ -5,6 +5,16 @@ public class Juego
     public static string palabra { get; private set; } = "murcielago";
     public static int intentos = 0;
     public static List<char?> letrasUsadas { get; private set; } = new List<char?>();
+    public static List<char?> letrasCorrectas { get; private set; } = new List<char?>();
+    public static string nuevaPalabra { get; private set; } = palabra;
+    // public static List<char> nuevapal { get; private set; }
+    
+    // foreach (char letra in palabra)
+    // {
+    //     nuevapal.Add('_')
+    // }
+    // nuevapal[letraCorrectaIndex] = letraCorrecta
+
 
 
     public static int DevolverPalabraComp(string palabraRes)
@@ -22,18 +32,27 @@ public class Juego
     }
     public static string devolverPalabra(char? letra)
     {
-        string nuevaPalabra = palabra;
         if (letra != null)
         {
-            List<char> LBuscada = buscarLetra(letra);
+            letrasCorrectas.Add(buscarLetra(letra));
 
             for (int i = 0; i < nuevaPalabra.Length; i++)
             {
-                for (int j = 0; j < LBuscada.Count; j++)
+                for (int j = 0; j < letrasCorrectas.Count; j++)
                 {
-                    if (nuevaPalabra[i] == LBuscada[j])
+                    if (palabra[i] != letrasCorrectas[j])
                     {
-                        nuevaPalabra = nuevaPalabra.Replace(palabra[i], '_');
+                        if(i > 0)
+                        {
+                            if(nuevaPalabra[i] == '_')
+                            {
+                                nuevaPalabra = nuevaPalabra.Replace(palabra[i], '_');
+                            }
+                        }
+                        else
+                        {
+                            nuevaPalabra = nuevaPalabra.Replace(palabra[i], '_');
+                        }
                     }
                 }
                 
@@ -58,18 +77,22 @@ public class Juego
         letrasUsadas.Add(letra);
     }
 
-    private static List<char> buscarLetra(char? letra)
+    private static char? buscarLetra(char? letra)
     {
-        List<char> LBuscada = new List<char>();
+        char? LBuscada;
         int i = 0;
 
-        while (i < palabra.Length)
+        while (i < palabra.Length && palabra[i] != letra)
         {
-            if (letra != palabra[i])
-            {
-                LBuscada.Add(palabra[i]);
-            }
             i++;
+        }
+        if (i == palabra.Length)
+        {
+            LBuscada = null;
+        }
+        else
+        {
+            LBuscada = palabra[i];
         }
         return LBuscada;
     }
