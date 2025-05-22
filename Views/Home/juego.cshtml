@@ -1,24 +1,36 @@
 @{
     ViewData["Title"] = "Juego";
 }
-<p>@ViewBag.Palabra</p>
-<p>Letras utilizadas: @for(int i = 0; i < ViewBag.letrasUsadas.Count; i++)
-{
-    @ViewBag.letrasUsadas[i];
 
-} </p>
-<p>intentos: @ViewBag.Intentos</p>
+<body>
+    <section class = "Juego">
+        <div>
+            <p>@ViewBag.Palabra</p>
+            <p>Letras utilizadas: @for (int i = 0; i < ViewBag.letrasUsadas.Count; i++)
+                {
+                    @ViewBag.letrasUsadas[i];
 
-<p>Adivine la letra: <form action='@Url.Action("JugarLetra", "Home")' method="get">
-    <input type="text" maxlength="1" style="text-transform: lowercase;" name="letra">
-    <input type="submit" value = "Arriesgar Letra">
+                } 
+            </p>
+            
+            <p>intentos: @ViewBag.Intentos</p>
 
+            <p>@ViewBag.Mensaje</p>
 
-</form> </p>
+            <p>Adivine la letra: <form action='@Url.Action("JugarLetra", "Home")' method="get">
+                <input type="text" maxlength="1" style="text-transform: lowercase;" name="letra">
+                <input type="submit" value = "Arriesgar Letra">
+            </form> </p>
 
-<p>Adivine la palabra: <form action='@Url.Action("JugarPalabra", "Home")' method="get">
-    <input type="text" style="text-transform: lowercase;" name="palabra">
-    <input type="submit" value = "Arriesgar Palabra">
+            <p>Adivine la palabra: <form action='@Url.Action("JugarPalabra", "Home")' method="get">
+                <input type="text" style="text-transform: lowercase;" name="palabra">
+                <input type="submit" value = "Arriesgar Palabra">
+            </form> </p>
 
+        </div>
+    </section>
+    <footer>
+        <h4>Tp hecho por Santi Hong, Santi Choe y Diana Park</h4>
+    </footer>
+</body>
 
-</form> </p>

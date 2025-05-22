@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP04-Ahorcado")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+344ffcc1ca089fbab126532413450341a415ae90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ff154ea3acad3026de27025ed2387ac1be3ba3a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP04-Ahorcado")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP04-Ahorcado")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

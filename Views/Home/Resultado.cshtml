@@ -1,4 +1,26 @@
 @{
     ViewData["Title"] = "Resultado";
 }
-<p>@ViewBag.Mensaje</p>
+
+<body>
+    <section class="Resultado">  
+        <div>
+            <p>@ViewBag.Mensaje</p>
+
+                @if(@ViewBag.Mensaje == "GANASTE")
+                {
+                   
+                    <h1>La palabra es: @ViewBag.Palabra</h1>
+                }
+
+                    <p>Letras utilizadas: @for(int i = 0; i < ViewBag.letrasUsadas.Count; i++)
+                    {
+                         @ViewBag.letrasUsadas[i];
+                    }</p>
+                    <h1>Intentos: @ViewBag.intentos</h1>
+        </div>
+    </section>
+    <footer>
+        <h4>Tp hecho por Santi Hong, Santi Choe y Diana Park</h4>
+    </footer>
+</body>

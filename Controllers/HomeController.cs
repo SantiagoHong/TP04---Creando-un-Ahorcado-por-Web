@@ -18,9 +18,9 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult JugarLetra(char? letra)
+    public IActionResult JugarLetra(char letra)
     {
-        if (letra == null)
+        if (letra == '\0')
         {
             ViewBag.Palabra = Juego.devolverPalabra(letra);
             ViewBag.letrasUsadas = Juego.letrasUsadas;
@@ -31,7 +31,7 @@ public class HomeController : Controller
         }
         else
         {
-            if (!Juego.buscarLetrasUsadas(letra))
+            if (Juego.buscarLetrasUsadas(letra))
             {
                 ViewBag.Palabra = Juego.devolverPalabra(letra);
                 Juego.agregarLetrasUsadas(letra);
@@ -42,6 +42,7 @@ public class HomeController : Controller
                 if (ViewBag.Palabra == Juego.palabra)
                 {
                     ViewBag.Mensaje = "GANASTE";
+                    
                     return View("Resultado");
                 }
                 else

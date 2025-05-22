@@ -9,6 +9,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "Z:\\2025 4IC\\PROGRAMACION\\VS Code\\TP04-Ahorcado\\wwwroot\\images\\Loose.png",
+      "PackagePath": "staticwebassets\\images\\Loose.png"
+    },
+    {
+      "Id": "Z:\\2025 4IC\\PROGRAMACION\\VS Code\\TP04-Ahorcado\\wwwroot\\images\\Thumbs.db",
+      "PackagePath": "staticwebassets\\images\\Thumbs.db"
+    },
+    {
+      "Id": "Z:\\2025 4IC\\PROGRAMACION\\VS Code\\TP04-Ahorcado\\wwwroot\\images\\win.png",
+      "PackagePath": "staticwebassets\\images\\win.png"
+    },
+    {
       "Id": "Z:\\2025 4IC\\PROGRAMACION\\VS Code\\TP04-Ahorcado\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
